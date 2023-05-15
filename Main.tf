@@ -16,7 +16,7 @@ resource "azurerm_mssql_server" "sqlserver" {
   administrator_login_password = "P@ssw0rd123!"
 }
 
-resource "azurerm_sql_database" "sqldb" {
+resource "azurerm_mssql_database" "sqldb" {
   name                = "mysqldb5591"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
