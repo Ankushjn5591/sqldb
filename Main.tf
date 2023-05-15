@@ -20,7 +20,7 @@ resource "azurerm_sql_database" "sqldb" {
   name                = "mysqldb5591"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  server_name         = azurerm_sql_server.sqlserver.name
+  server_name         = azurerm_mssql_server.sqlserver.name
   edition             = "Basic"
   collation           = "SQL_Latin1_General_CP1_CI_AS"
   requested_service_objective_name = "S0"
