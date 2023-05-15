@@ -24,7 +24,7 @@ resource "azurerm_mssql_database" "sqldb" {
   max_size_gb    = 2
   read_scale     = true
   sku_name       = "S0"
-  zone_redundant = true
+  local_redundant = true
 }
 
 terraform {
