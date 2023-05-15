@@ -17,13 +17,14 @@ resource "azurerm_mssql_server" "sqlserver" {
 }
 
 resource "azurerm_mssql_database" "sqldb" {
-  name                = "mysqldb5591"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
-  server_name         = azurerm_mssql_server.sqlserver.name
-  edition             = "Basic"
-  collation           = "SQL_Latin1_General_CP1_CI_AS"
-  requested_service_objective_name = "S0"
+  name           = "mysqldb5591"
+  server_id      = azurerm_mssql_server.sqlserver.id
+  collation      = "SQL_Latin1_General_CP1_CI_AS"
+  license_type   = "LicenseIncluded"
+  max_size_gb    = 4
+  read_scale     = true
+  sku_name       = "S0"
+  zone_redundant = true
 }
 
 terraform {
