@@ -7,7 +7,7 @@ resource "azurerm_resource_group" "rg" {
   location = "East US"
 }
 
-resource "azurerm_sql_server" "sqlserver" {
+resource "azurerm_mssql_server" "sqlserver" {
   name                         = "mysqlserver5591"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
